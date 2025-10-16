@@ -24,7 +24,8 @@ namespace DraStigorGame.Game
                 {
                     if (board.TakePins(humanPins))
                         Console.WriteLine($"{UserId} tar {humanPins} stickor.\n");
-                        return humanPins;
+                    
+                    return humanPins;
                 }
 
                 Console.WriteLine("Invalid number, Try again!");
