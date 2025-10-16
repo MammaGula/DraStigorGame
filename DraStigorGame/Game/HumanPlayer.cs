@@ -13,17 +13,18 @@ namespace DraStigorGame.Game
 
         public override int TakePins(Board board)
         {
-            int taken; // valid amount of taken pins
+            int humanPins; // valid amount of taken pins
 
             while (true)
             {
                 Console.Write($"Enter amout of pins you want to take (1 or 2): ");
-                string amountPin = Console.ReadLine();
+                string inputPin = Console.ReadLine();
 
-                if (int.TryParse(amountPin, out taken) && (taken == 1 || taken == 2))
+                if (int.TryParse(inputPin, out humanPins) && (humanPins == 1 || humanPins == 2))
                 {
-                    if (board.TakePins(taken))
-                        return taken;
+                    if (board.TakePins(humanPins))
+                        Console.WriteLine($"{UserId} tar {humanPins} stickor.\n");
+                        return humanPins;
                 }
 
                 Console.WriteLine("Invalid number, Try again!");

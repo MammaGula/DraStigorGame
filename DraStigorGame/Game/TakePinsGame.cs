@@ -15,7 +15,10 @@ namespace DraStigorGame.Game
 
 
             HumanPlayer human = new HumanPlayer("Gula");
-            Console.WriteLine(human.TakePins(board)); 
+            human.TakePins(board); 
+
+            ComputerPlayer computer = new ComputerPlayer("CompPlayer");
+            computer.TakePins(board);
         }
     }
 }
