@@ -10,7 +10,11 @@ namespace DraStigorGame.Game
     {
         public static void Main(string[] args)
         { 
-            Board board = new Board();
+            Board board = new Board(10);
+            //Console.WriteLine(board.TakePins(3));
+
+           
+
         }
 
     }
