@@ -23,12 +23,12 @@ namespace DraStigorGame.Game
                 if (int.TryParse(inputPin, out humanPins) && (humanPins == 1 || humanPins == 2))
                 {
                     if (board.TakePins(humanPins))
-                        Console.WriteLine($"{UserId} tar {humanPins} stickor.\n");
+                        Console.WriteLine($"👤 {UserId} tar {humanPins} stickor.");
                     
                     return humanPins;
                 }
 
-                Console.WriteLine("Invalid number, Try again!");
+                Console.WriteLine("\nInvalid number, Try again⚠️\n");
             }
         }
     }

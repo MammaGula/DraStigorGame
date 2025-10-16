@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace DraStigorGame.Game
@@ -19,6 +20,24 @@ namespace DraStigorGame.Game
 
             //ComputerPlayer computer = new ComputerPlayer("CompPlayer");
             //computer.TakePins(board);
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓");
+            Console.WriteLine("┃                                    ┃");
+            Console.WriteLine("┃      Welcome to TakePins Game      ┃");
+            Console.WriteLine("┃                                    ┃");
+            Console.WriteLine("┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Welcome to TakePins Game");
+            Console.WriteLine("- Two players take turns taking pins.\n" +
+                "- One can take one or two pins.\n " +
+                "- The one who takes the last pin wins. ");
+
+            Console.WriteLine("Let's go...\n");
+            Console.ResetColor();
 
 
             Board board = new Board(10); // 
@@ -35,15 +54,20 @@ namespace DraStigorGame.Game
 
                 if (board.IsGameOver())
                 {
-                    Console.WriteLine($"{current.UserId} won the game!\n");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine($"\n******{current.UserId} won the game!🏆******");
+                    Console.ResetColor();
+
                     break;
                 }
 
                 // Switch players
                 current = (current == human) ? computer : human;
+              
             }
 
             Console.WriteLine("The game is over. Thank you for playing!\n");
+            Console.WriteLine("----------------------------------------");
         }
     }
 }

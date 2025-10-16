@@ -18,7 +18,8 @@ namespace DraStigorGame.Game
             int compRandomPins = random.Next(1, 3);
 
             board.TakePins(compRandomPins);
-            Console.WriteLine($"Computer Player tar {compRandomPins} stickor.\n");
+
+            Console.WriteLine($"💻 Computer Player tar {compRandomPins} stickor.");
             return compRandomPins;
         }
     }
