@@ -16,11 +16,11 @@ namespace DraStigorGame.Game
             pinsLeft = startPins;
         }
 
-        public bool TakePins(int pickedPins)  // Take 1 or 2 pins
+        public bool TakePins(int pickenPins)  // Take 1 or 2 pins
         {        
-            if ((pickedPins >= 1 && pickedPins < 3) && (pickedPins <= pinsLeft))
+            if ((pickenPins >= 1 && pickenPins < 3) && (pickenPins <= pinsLeft))
             {
-                pinsLeft -= pickedPins;
+                pinsLeft -= pickenPins;
                 return true;
             }
             else

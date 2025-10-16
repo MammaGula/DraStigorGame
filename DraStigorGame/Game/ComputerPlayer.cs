@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace DraStigorGame.Game
 {
-    internal class ComputerPlayer
+    public class ComputerPlayer : Player
     {
+        public ComputerPlayer(string userId) : base(userId) { }
+
+        public override int TakePins(Board board)
+        {
+            return 0;
+        }
     }
 }
