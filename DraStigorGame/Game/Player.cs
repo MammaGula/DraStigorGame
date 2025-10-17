@@ -8,7 +8,8 @@ namespace DraStigorGame.Game
 {
     public abstract class Player
     {
-        public string UserId { get; private set; }
+        protected string UserId { get; private set; }
+        //protected string UserId;
 
         protected Player(string userId)
         {

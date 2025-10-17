@@ -44,25 +44,26 @@ namespace DraStigorGame.Game
             HumanPlayer human = new HumanPlayer("Gula");
             ComputerPlayer computer = new ComputerPlayer("Computer");
 
-            Player current = human; // human starts
+            Player currentPlayer = human; // human starts
 
             while (!board.IsGameOver()) // game loop
             {
                 Console.WriteLine($"There are {board.GetPinsLeft()} pins on the table.\n");
                
-                int takenPins = current.TakePins(board);
+                int takenPins = currentPlayer.TakePins(board);
 
                 if (board.IsGameOver())
                 {
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.WriteLine($"\n******{current.UserId} won the game!🏆******");
+                    Console.WriteLine($"\n******{currentPlayer.GetUserId()} won the game!🏆******");
                     Console.ResetColor();
 
                     break;
                 }
 
+
                 // Switch players
-                current = (current == human) ? computer : human;
+                currentPlayer = (currentPlayer == human) ? computer : human;
               
             }
 
